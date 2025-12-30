@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining & Energy Partners (MEP) - Corporate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Utilisation d'une police sans-serif moderne et propre */
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        
+        /* Configuration des couleurs personnalisées basées sur votre demande */
+        :root {
+            --mep-blue: #0f172a; /* Bleu nuit très foncé (slate-900) */
+            --mep-blue-light: #1e293b; /* Bleu nuit un peu plus clair pour les cartes (slate-800) */
+            --mep-orange: #f97316; /* Orange vif */
+        }
+
+        /* Image de fond du Hero avec un filtre sombre puissant */
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Effet de parallaxe léger */
+        }
+        
+        /* Style pour les titres de section */
+        .section-title {
+            @apply text-3xl md:text-4xl font-extrabold text-white mb-2;
+        }
+        .section-subtitle {
+            @apply text-orange-500 font-semibold tracking-wider uppercase text-sm mb-8 block;
+        }
+
+        /* Style des cartes sombres */
+        .dark-card {
+            @apply bg-slate-800 border border-slate-700 p-8 rounded-xl shadow-lg hover:border-orange-500/50 transition-all duration-300;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200 leading-relaxed">
+
+    <nav class="bg-slate-900/95 backdrop-blur-sm fixed w-full z-50 border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-white tracking-tight flex items-center">
+                <i class="fas fa-layer-group text-orange-500 mr-3"></i> MEP
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
+                <a href="#accueil" class="hover:text-orange-500 transition-colors">Accueil</a>
+                <a href="#valeurs" class="hover:text-orange-500 transition-colors">Valeurs</a>
+                <a href="#secteurs" class="hover:text-orange-500 transition-colors">Secteurs</a>
+                <a href="#services" class="hover:text-orange-500 transition-colors">Services</a>
+                <a href="#contact" class="px-5 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition shadow-md shadow-orange-500/20">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="accueil" class="hero-bg min-h-[85vh] flex items-center text-white pt-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl">
+                <span class="text-orange-500 font-bold tracking-widest uppercase mb-4 inline-block">Conseil Stratégique & Développement</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    MINING & ENERGY <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">PARTNERS</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 text-slate-300 font-light border-l-4 border-orange-500 pl-6 italic">
+                    "Nous irons chaque jour, encore plus loin."
+                </p>
+                <p class="max-w-2xl text-lg mb-10 text-slate-400">
+                    Acteur majeur en Mauritanie et dans la sous-région. Spécialistes en Mines, Pétrole, Gaz et Énergies Vertes.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-md shadow-lg shadow-orange-500/30 transition-all hover:-translate-y-1">
+                        Démarrer un projet
+                    </a>
+                    <a href="#services" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold py-4 px-8 rounded-md transition-all hover:-translate-y-1">
+                        Nos Expertises
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="valeurs" class="py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="mb-16">
+                <span class="section-subtitle">Notre ADN</span>
+                <h2 class="section-title">Vision & Valeurs</h2>
+                <p class="mt-4 text-slate-400 max-w-2xl text-lg">
+                    Être reconnu comme le partenaire de référence pour le développement économique durable.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="dark-card group">
+                    <div class="w-14 h-14 bg-slate-700/50 rounded-lg flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500/10 transition-colors">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Performance</h3>
+                    <p class="text-slate-400">Excellence opérationnelle et rapidité d'action dans tous nos mandats.</p>
+                </div>
+                <div class="dark-card group">
+                    <div class="w-14 h-14 bg-slate-700/50 rounded-lg flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500/10 transition-colors">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Rentabilité</h3>
+                    <p class="text-slate-400">Maximisation du retour sur investissement pour nos clients.</p>
+                </div>
+                <div class="dark-card group">
+                    <div class="w-14 h-14 bg-slate-700/50 rounded-lg flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500/10 transition-colors">
+                        <i class="fas fa-handshake-simple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Intégrité</h3>
+                    <p class="text-slate-400">Éthique, transparence et respect absolu de nos partenaires.</p>
+                </div>
+                <div class="dark-card group">
+                    <div class="w-14 h-14 bg-slate-700/50 rounded-lg flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500/10 transition-colors">
+                        <i class="fas fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Responsabilité</h3>
+                    <p class="text-slate-400">Engagement total envers nos devoirs sociaux et environnementaux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="secteurs" class="py-20 bg-slate-800 border-y border-slate-700">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="section-subtitle">Expertise Multidisciplinaire</span>
+                <h2 class="section-title mb-6">Secteurs Clés</h2>
+                <p class="text-slate-300 text-lg mb-8">
+                    Une connaissance approfondie des industries extractives et énergétiques en Mauritanie.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-orange-500"></i>
+                        <span class="font-semibold">Mining (Mines)</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-orange-500"></i>
+                        <span class="font-semibold">Oil & Gas</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-orange-500"></i>
+                        <span class="font-semibold">Green Energy</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-orange-500"></i>
+                        <span class="font-semibold">Eau & Désalinisation</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-orange-500"></i>
+                        <span class="font-semibold">Infrastructures</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative h-96 rounded-xl overflow-hidden shadow-2xl border border-slate-700/50">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Industrie" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="section-subtitle">Nos Piliers</span>
+                <h2 class="section-title">Domaines d'Intervention</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="dark-card relative overflow-hidden group">
+                    <div class="absolute -top-4 -right-4 text-9xl font-black text-slate-800/50 z-0 group-hover:text-orange-500/10 transition-colors">01</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center">
+                            <span class="bg-orange-500 w-2 h-8 mr-4 rounded-full"></span>
+                            Développement de Projets
+                        </h3>
+                        <ul class="space-y-3 text-slate-400">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Prospection & Faisabilité</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Ingénierie et suivi</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Audit & Diagnostic</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Maintenance Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dark-card relative overflow-hidden group">
+                    <div class="absolute -top-4 -right-4 text-9xl font-black text-slate-800/50 z-0 group-hover:text-orange-500/10 transition-colors">02</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center">
+                            <span class="bg-orange-500 w-2 h-8 mr-4 rounded-full"></span>
+                            Solutions Entreprises
+                        </h3>
+                        <ul class="space-y-3 text-slate-400">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Business Strategy</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Optimisation des coûts</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Gestion Compétences (GPEC)</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Excellence Ops (SMQ & HSE)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dark-card relative overflow-hidden group">
+                    <div class="absolute -top-4 -right-4 text-9xl font-black text-slate-800/50 z-0 group-hover:text-orange-500/10 transition-colors">03</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center">
+                            <span class="bg-orange-500 w-2 h-8 mr-4 rounded-full"></span>
+                            Gouvernance & Stratégie
+                        </h3>
+                        <ul class="space-y-3 text-slate-400">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Conseil Administration publique</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Pilotage Mines & O&G</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Transition énergétique</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Renforcement capacités</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="dark-card relative overflow-hidden group md:col-span-1 lg:col-span-1">
+                    <div class="absolute -top-4 -right-4 text-9xl font-black text-slate-800/50 z-0 group-hover:text-orange-500/10 transition-colors">04</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center">
+                            <span class="bg-orange-500 w-2 h-8 mr-4 rounded-full"></span>
+                            Accompagnement Investisseurs
+                        </h3>
+                        <ul class="space-y-3 text-slate-400">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Promotion de l'IDE</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Initiation cadre légal</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Assistance levée de fonds</li>
+                        </ul>
+                    </div>
+                </div>
+                  <div class="dark-card relative overflow-hidden group md:col-span-2 lg:col-span-2">
+                    <div class="absolute -top-4 -right-4 text-9xl font-black text-slate-800/50 z-0 group-hover:text-orange-500/10 transition-colors">05</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center">
+                            <span class="bg-orange-500 w-2 h-8 mr-4 rounded-full"></span>
+                            Services Support
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <ul class="space-y-3 text-slate-400">
+                                <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Représentation commerciale</li>
+                                <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Services logistiques</li>
+                            </ul>
+                             <ul class="space-y-3 text-slate-400">
+                                <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Travaux de sous-traitance</li>
+                                <li class="flex items-start"><i class="fas fa-chevron-right text-orange-500 mt-1 mr-2 text-xs"></i>Support opérationnel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-950 text-slate-400 pt-20 pb-10 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <div class="text-3xl font-extrabold text-white mb-6 flex items-center">
+                         <i class="fas fa-layer-group text-orange-500 mr-3"></i> MEP
+                    </div>
+                    <p class="mb-6 leading-relaxed">
+                        Partenaire stratégique pour la levée de fonds, le financement de projets, et le conseil aux entreprises et à l'administration publique en Mauritanie.
+                    </p>
+                </div>
+                <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider">Coordonnées</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-4 text-orange-500"></i>
+                                <span>BP 7466 Nouakchott, Mauritanie</span>
+                            </li>
+                            <li class="flex items-center group">
+                                <i class="fas fa-phone mr-4 text-orange-500 group-hover:text-white transition"></i>
+                                <span>+222 45 25 23 26</span>
+                            </li>
+                            <li class="flex items-center group">
+                                <i class="fas fa-envelope mr-4 text-orange-500 group-hover:text-white transition"></i>
+                                <a href="mailto:contact.mepartners@gmail.com" class="hover:text-orange-500 transition">contact.mepartners@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                         <h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider">Informations</h4>
+                         <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-file-contract mr-4 text-orange-500"></i>
+                                <span>RC 2099-NKC (2002)</span>
+                            </li>
+                             </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800/50 pt-8 text-center text-sm">
+                <p>&copy; MELOULAYEEEE GOUMIIIIIII LVOOOOG.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
