@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mining & Energy Partners (MEP) - Corporate</title>
+    <title>Mining & Energy Partners (MEP)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -14,9 +14,9 @@
             --mep-orange: #f97316; 
         }
 
-        /* NOUVEAU : Hero sans photo, juste un dégradé riche */
+        /* Hero sans photo, dégradé Radial Pro */
         .hero-bg {
-            background: radial-gradient(circle at top right, #1e293b, #0f172a 60%);
+            background: radial-gradient(circle at top right, #334155, #0f172a 60%);
         }
         
         .section-title {
@@ -30,7 +30,7 @@
             @apply bg-slate-800 border border-slate-700 p-8 rounded-xl shadow-lg hover:border-orange-500/50 transition-all duration-300;
         }
 
-        /* NOUVEAU : Style pour les cartes Secteurs avec photos */
+        /* Style Cartes Secteurs */
         .sector-card {
             @apply relative h-64 rounded-xl overflow-hidden group border border-slate-700 shadow-xl;
         }
@@ -40,6 +40,10 @@
         .sector-img {
             @apply absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110;
         }
+        
+        /* Utilitaires pour la langue */
+        .hidden { display: none !important; }
+        .cursor-pointer { cursor: pointer; }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-200 leading-relaxed">
@@ -52,17 +56,25 @@
 
             <div class="flex items-center space-x-8">
                 <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
-                    <a href="#accueil" class="hover:text-orange-500 transition-colors">Accueil</a>
-                    <a href="#valeurs" class="hover:text-orange-500 transition-colors">Valeurs</a>
-                    <a href="#secteurs" class="hover:text-orange-500 transition-colors">Secteurs</a>
-                    <a href="#services" class="hover:text-orange-500 transition-colors">Services</a>
+                    <a href="#accueil" class="hover:text-orange-500 transition-colors">
+                        <span class="lang-fr">Accueil</span><span class="lang-en hidden">Home</span>
+                    </a>
+                    <a href="#valeurs" class="hover:text-orange-500 transition-colors">
+                        <span class="lang-fr">Valeurs</span><span class="lang-en hidden">Values</span>
+                    </a>
+                    <a href="#secteurs" class="hover:text-orange-500 transition-colors">
+                        <span class="lang-fr">Secteurs</span><span class="lang-en hidden">Sectors</span>
+                    </a>
+                    <a href="#services" class="hover:text-orange-500 transition-colors">
+                        <span class="lang-fr">Services</span><span class="lang-en hidden">Services</span>
+                    </a>
                     <a href="#contact" class="hover:text-orange-500 transition-colors">Contact</a>
                 </div>
                 
                 <div class="border-l border-slate-700 pl-6 flex space-x-3 text-sm font-bold">
-                    <a href="#" class="text-orange-500">FR</a>
+                    <button onclick="switchLanguage('fr')" id="btn-fr" class="text-orange-500 hover:text-white transition">FR</button>
                     <span class="text-slate-600">|</span>
-                    <a href="#" class="text-slate-400 hover:text-white transition-colors">EN</a>
+                    <button onclick="switchLanguage('en')" id="btn-en" class="text-slate-400 hover:text-white transition">EN</button>
                 </div>
             </div>
         </div>
@@ -71,19 +83,23 @@
     <header id="accueil" class="hero-bg min-h-[85vh] flex items-center text-white pt-20">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl">
-                <span class="text-orange-500 font-bold tracking-widest uppercase mb-4 inline-block">Conseil Stratégique & Développement</span>
+                <span class="text-orange-500 font-bold tracking-widest uppercase mb-4 inline-block">
+                    <span class="lang-fr">Conseil Stratégique & Développement</span>
+                    <span class="lang-en hidden">Strategic Consulting & Development</span>
+                </span>
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
                     MINING & ENERGY <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">PARTNERS</span>
                 </h1>
                 <p class="text-xl md:text-2xl mb-10 text-slate-300 font-light border-l-4 border-orange-500 pl-6 italic">
-                    "Nous irons chaque jour, encore plus loin."
+                    <span class="lang-fr">"Nous irons chaque jour, encore plus loin."</span>
+                    <span class="lang-en hidden">"We will go further every day."</span>
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-md shadow-lg shadow-orange-500/30 transition-all hover:-translate-y-1">
-                        Contactez-nous
+                        <span class="lang-fr">Contactez-nous</span><span class="lang-en hidden">Contact Us</span>
                     </a>
                     <a href="#secteurs" class="bg-transparent border border-slate-500 text-slate-300 hover:text-white hover:border-white font-bold py-4 px-8 rounded-md transition-all">
-                        Découvrir nos secteurs
+                        <span class="lang-fr">Découvrir nos secteurs</span><span class="lang-en hidden">Discover Sectors</span>
                     </a>
                 </div>
             </div>
@@ -93,10 +109,15 @@
     <section id="valeurs" class="py-24 bg-slate-900">
         <div class="container mx-auto px-6">
             <div class="mb-16">
-                <span class="section-subtitle">Notre ADN</span>
-                <h2 class="section-title">Vision & Valeurs</h2>
+                <span class="section-subtitle">
+                    <span class="lang-fr">Notre ADN</span><span class="lang-en hidden">Our DNA</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="lang-fr">Vision & Valeurs</span><span class="lang-en hidden">Vision & Values</span>
+                </h2>
                 <p class="mt-4 text-slate-400 max-w-2xl text-lg">
-                    Être reconnu comme le partenaire de référence pour le développement économique durable.
+                    <span class="lang-fr">Être reconnu comme le partenaire de référence pour le développement économique durable.</span>
+                    <span class="lang-en hidden">To be recognized as the main player in strategic consulting and sustainable economic development.</span>
                 </p>
             </div>
 
@@ -104,22 +125,36 @@
                 <div class="dark-card group">
                     <div class="w-14 h-14 bg-slate-700/50 rounded-lg flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500/10 transition-colors"><i class="fas fa-rocket"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-white">Performance</h3>
-                    <p class="text-slate-400">Excellence opérationnelle.</p>
+                    <p class="text-slate-400">
+                        <span class="lang-fr">Excellence opérationnelle.</span><span class="lang-en hidden">Operational excellence.</span>
+                    </p>
                 </div>
                 <div class="dark-card group">
                     <div class="w-14 h-14 bg-slate-700/50 rounded-lg flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500/10 transition-colors"><i class="fas fa-chart-pie"></i></div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Rentabilité</h3>
-                    <p class="text-slate-400">Retour sur investissement.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">
+                        <span class="lang-fr">Rentabilité</span><span class="lang-en hidden">Profitability</span>
+                    </h3>
+                    <p class="text-slate-400">
+                        <span class="lang-fr">Retour sur investissement.</span><span class="lang-en hidden">Return on investment.</span>
+                    </p>
                 </div>
                 <div class="dark-card group">
                     <div class="w-14 h-14 bg-slate-700/50 rounded-lg flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500/10 transition-colors"><i class="fas fa-handshake-simple"></i></div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Intégrité</h3>
-                    <p class="text-slate-400">Éthique et transparence.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">
+                        <span class="lang-fr">Intégrité</span><span class="lang-en hidden">Integrity</span>
+                    </h3>
+                    <p class="text-slate-400">
+                        <span class="lang-fr">Éthique et transparence.</span><span class="lang-en hidden">Ethics and transparency.</span>
+                    </p>
                 </div>
                 <div class="dark-card group">
                     <div class="w-14 h-14 bg-slate-700/50 rounded-lg flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500/10 transition-colors"><i class="fas fa-shield-heart"></i></div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Responsabilité</h3>
-                    <p class="text-slate-400">Engagements respectés.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">
+                        <span class="lang-fr">Responsabilité</span><span class="lang-en hidden">Responsibility</span>
+                    </h3>
+                    <p class="text-slate-400">
+                        <span class="lang-fr">Engagements respectés.</span><span class="lang-en hidden">Commitments kept.</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -128,13 +163,17 @@
     <section id="secteurs" class="py-24 bg-slate-800 border-y border-slate-700">
         <div class="container mx-auto px-6">
             <div class="mb-16 text-center">
-                <span class="section-subtitle">Expertise Multidisciplinaire</span>
-                <h2 class="section-title">Nos Secteurs Clés</h2>
+                <span class="section-subtitle">
+                    <span class="lang-fr">Expertise Multidisciplinaire</span><span class="lang-en hidden">Multidisciplinary Expertise</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="lang-fr">Nos Secteurs Clés</span><span class="lang-en hidden">Key Sectors</span>
+                </h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <div class="sector-card">
-                    <img src="https://images.unsplash.com/photo-1599940824399-b87987ced7bb?auto=format&fit=crop&w=600&q=80" alt="Mines" class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1579532536935-6453cd707e5d?q=80&w=800&auto=format&fit=crop" alt="Mines" class="sector-img">
                     <div class="sector-overlay">
                         <i class="fas fa-gem text-orange-500 text-3xl mb-2"></i>
                         <h3 class="text-xl font-bold text-white">Mines</h3>
@@ -142,7 +181,7 @@
                 </div>
 
                 <div class="sector-card">
-                    <img src="https://images.unsplash.com/photo-1598282381488-348f9361a938?auto=format&fit=crop&w=600&q=80" alt="Pétrole" class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1566395954602-5e43c8b42211?q=80&w=800&auto=format&fit=crop" alt="Oil" class="sector-img">
                     <div class="sector-overlay">
                         <i class="fas fa-oil-can text-orange-500 text-3xl mb-2"></i>
                         <h3 class="text-xl font-bold text-white">Oil & Gas</h3>
@@ -150,7 +189,7 @@
                 </div>
 
                 <div class="sector-card">
-                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=600&q=80" alt="Énergie Verte" class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=800&auto=format&fit=crop" alt="Green Energy" class="sector-img">
                     <div class="sector-overlay">
                         <i class="fas fa-leaf text-orange-500 text-3xl mb-2"></i>
                         <h3 class="text-xl font-bold text-white">Green Energy</h3>
@@ -158,15 +197,17 @@
                 </div>
 
                 <div class="sector-card">
-                    <img src="https://images.unsplash.com/photo-1562657552-3d719736c05d?auto=format&fit=crop&w=600&q=80" alt="Eau" class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=800&auto=format&fit=crop" alt="Water" class="sector-img">
                     <div class="sector-overlay">
                         <i class="fas fa-water text-orange-500 text-3xl mb-2"></i>
-                        <h3 class="text-xl font-bold text-white">Eau & Désal.</h3>
+                        <h3 class="text-xl font-bold text-white">
+                            <span class="lang-fr">Eau</span><span class="lang-en hidden">Water</span>
+                        </h3>
                     </div>
                 </div>
 
                 <div class="sector-card">
-                    <img src="https://images.unsplash.com/photo-1465447142348-e9952c393850?auto=format&fit=crop&w=600&q=80" alt="Infrastructures" class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1596525737191-236b3b552887?q=80&w=800&auto=format&fit=crop" alt="Infra" class="sector-img">
                     <div class="sector-overlay">
                         <i class="fas fa-road text-orange-500 text-3xl mb-2"></i>
                         <h3 class="text-xl font-bold text-white">Infra.</h3>
@@ -179,19 +220,31 @@
     <section id="services" class="py-24 bg-slate-900">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="section-subtitle">Nos Piliers</span>
-                <h2 class="section-title">Domaines d'Intervention</h2>
+                <span class="section-subtitle">
+                    <span class="lang-fr">Nos Piliers</span><span class="lang-en hidden">Our Pillars</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="lang-fr">Domaines d'Intervention</span><span class="lang-en hidden">Areas of Intervention</span>
+                </h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="dark-card relative overflow-hidden group hover:-translate-y-2 transition-transform">
                     <div class="absolute -top-4 -right-4 text-9xl font-black text-slate-800/50 z-0">01</div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-6 text-white border-b-2 border-orange-500 pb-2 inline-block">Projets</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-white border-b-2 border-orange-500 pb-2 inline-block">
+                            <span class="lang-fr">Projets</span><span class="lang-en hidden">Projects</span>
+                        </h3>
                         <ul class="space-y-3 text-slate-400">
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Prospection & Faisabilité</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Ingénierie et suivi</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Maintenance Management</li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Prospection & Faisabilité</span><span class="lang-en hidden">Prospecting & Feasibility</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Ingénierie et suivi</span><span class="lang-en hidden">Engineering & Monitoring</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Maintenance Management</span><span class="lang-en hidden">Maintenance Management</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -201,9 +254,15 @@
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold mb-6 text-white border-b-2 border-orange-500 pb-2 inline-block">Solutions</h3>
                         <ul class="space-y-3 text-slate-400">
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Business Strategy</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Optimisation des coûts</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>QHSE & Excellence Ops</li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Business Strategy</span><span class="lang-en hidden">Business Strategy</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Optimisation des coûts</span><span class="lang-en hidden">Cost Killer</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">QHSE & Excellence Ops</span><span class="lang-en hidden">QHSE & Ops Excellence</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -211,11 +270,19 @@
                 <div class="dark-card relative overflow-hidden group hover:-translate-y-2 transition-transform">
                     <div class="absolute -top-4 -right-4 text-9xl font-black text-slate-800/50 z-0">03</div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-6 text-white border-b-2 border-orange-500 pb-2 inline-block">Gouvernance</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-white border-b-2 border-orange-500 pb-2 inline-block">
+                            <span class="lang-fr">Gouvernance</span><span class="lang-en hidden">Governance</span>
+                        </h3>
                         <ul class="space-y-3 text-slate-400">
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Conseil Administration</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Stratégie Énergétique</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Renforcement capacités</li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Conseil Administration</span><span class="lang-en hidden">Public Admin Consulting</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Stratégie Énergétique</span><span class="lang-en hidden">Energy Strategy</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Renforcement capacités</span><span class="lang-en hidden">Capacity Building</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -223,11 +290,19 @@
                 <div class="dark-card relative overflow-hidden group hover:-translate-y-2 transition-transform">
                     <div class="absolute -top-4 -right-4 text-9xl font-black text-slate-800/50 z-0">04</div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-6 text-white border-b-2 border-orange-500 pb-2 inline-block">Investisseurs</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-white border-b-2 border-orange-500 pb-2 inline-block">
+                            <span class="lang-fr">Investisseurs</span><span class="lang-en hidden">Investors</span>
+                        </h3>
                         <ul class="space-y-3 text-slate-400">
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Promotion de l'IDE</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Assistance levée de fonds</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Cadre légal & Fiscal</li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Promotion de l'IDE</span><span class="lang-en hidden">FDI Promotion</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Assistance levée de fonds</span><span class="lang-en hidden">Fundraising Support</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Cadre légal & Fiscal</span><span class="lang-en hidden">Legal & Fiscal Framework</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -237,10 +312,18 @@
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold mb-6 text-white border-b-2 border-orange-500 pb-2 inline-block">Support</h3>
                         <ul class="space-y-3 text-slate-400">
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Représentation commerciale</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Services logistiques</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Travaux de sous-traitance</li>
-                            <li><i class="fas fa-check text-orange-500 mr-2"></i>Support opérationnel</li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Représentation commerciale</span><span class="lang-en hidden">Commercial Representation</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Services logistiques</span><span class="lang-en hidden">Logistics Services</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Travaux de sous-traitance</span><span class="lang-en hidden">Subcontracting Works</span>
+                            </li>
+                            <li><i class="fas fa-check text-orange-500 mr-2"></i>
+                                <span class="lang-fr">Support opérationnel</span><span class="lang-en hidden">Operational Support</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -257,7 +340,8 @@
                          <i class="fas fa-layer-group text-orange-500 mr-3"></i> MEP
                     </div>
                     <p class="mb-6 leading-relaxed max-w-md">
-                        Partenaire stratégique pour la levée de fonds, le financement de projets, et le conseil aux entreprises et à l'administration publique en Mauritanie.
+                        <span class="lang-fr">Partenaire stratégique pour la levée de fonds, le financement de projets, et le conseil aux entreprises et à l'administration publique.</span>
+                        <span class="lang-en hidden">Strategic partner for fundraising, project financing, and consulting for companies and public administration.</span>
                     </p>
                 </div>
                 <div>
@@ -286,5 +370,29 @@
         </div>
     </footer>
 
+    <script>
+        function switchLanguage(lang) {
+            const frElements = document.querySelectorAll('.lang-fr');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'fr') {
+                frElements.forEach(el => el.classList.remove('hidden'));
+                enElements.forEach(el => el.classList.add('hidden'));
+                btnFr.classList.add('text-orange-500');
+                btnFr.classList.remove('text-slate-400');
+                btnEn.classList.add('text-slate-400');
+                btnEn.classList.remove('text-orange-500');
+            } else {
+                frElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                btnEn.classList.add('text-orange-500');
+                btnEn.classList.remove('text-slate-400');
+                btnFr.classList.add('text-slate-400');
+                btnFr.classList.remove('text-orange-500');
+            }
+        }
+    </script>
 </body>
 </html>
