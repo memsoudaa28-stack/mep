@@ -21,14 +21,16 @@
         .bg-infra { background: linear-gradient(135deg, #374151 0%, #9ca3af 100%); }
 
         .sector-card { @apply relative h-64 rounded-xl overflow-hidden group shadow-xl border border-slate-600 transition-transform hover:-translate-y-2; }
-        .sector-content { @apply absolute inset-0 flex flex-col justify-end p-6 bg-black/20 group-hover:bg-transparent transition-colors; }
+        .sector-content { @apply absolute inset-0 flex flex-col justify-end p-6 bg-black/40 group-hover:bg-black/10 transition-colors duration-500; }
         
         /* UTILITAIRES */
         .section-title { @apply text-3xl md:text-4xl font-extrabold text-white mb-2; }
         .section-subtitle { @apply text-orange-500 font-semibold tracking-wider uppercase text-sm mb-8 block; }
         .dark-card { @apply bg-slate-800 border border-slate-700 p-8 rounded-xl shadow-lg hover:border-orange-500/50 transition-all duration-300; }
         
-        /* CORRECTION ICI : J'ai supprimé la classe .hidden avec !important */
+        /* ANIMATION TEXTE HERO */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeIn 0.8s ease-out forwards; }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-200 leading-relaxed">
@@ -57,27 +59,16 @@
                 <i class="fas fa-layer-group text-orange-500 mr-3"></i> MEP
             </div>
 
-            <button id="nav-toggle"
-                    class="md:hidden text-slate-200 hover:text-orange-500 focus:outline-none">
+            <button id="nav-toggle" class="md:hidden text-slate-200 hover:text-orange-500 focus:outline-none">
                 <i id="nav-icon" class="fas fa-bars text-2xl"></i>
             </button>
 
             <div class="hidden md:flex flex-wrap justify-center items-center gap-4 md:gap-8">
-                <a href="#accueil" class="text-orange-500 font-bold uppercase tracking-wide text-sm hover:text-orange-400 transition">
-                    <span class="lang-fr">Accueil</span><span class="lang-en hidden">Home</span>
-                </a>
-                <a href="#apropos" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
-                    <span class="lang-fr">À propos</span><span class="lang-en hidden">About</span>
-                </a>
-                <a href="#secteurs" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
-                    <span class="lang-fr">Secteurs</span><span class="lang-en hidden">Sectors</span>
-                </a>
-                <a href="#services-anchor" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
-                    <span class="lang-fr">Services</span><span class="lang-en hidden">Services</span>
-                </a>
-                <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold uppercase px-6 py-2 md:py-3 rounded transition shadow-lg mt-2 md:mt-0">
-                    Contact
-                </a>
+                <a href="#accueil" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition"><span class="lang-fr">Accueil</span><span class="lang-en hidden">Home</span></a>
+                <a href="#apropos" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition"><span class="lang-fr">À propos</span><span class="lang-en hidden">About</span></a>
+                <a href="#secteurs" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition"><span class="lang-fr">Secteurs</span><span class="lang-en hidden">Sectors</span></a>
+                <a href="#services-anchor" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition"><span class="lang-fr">Services</span><span class="lang-en hidden">Services</span></a>
+                <a href="#contact" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">Contact</a>
             </div>
         </div>
 
@@ -93,44 +84,34 @@
                         <button onclick="switchLanguage('en')" id="btn-en-mobile" class="text-xs font-bold text-slate-400 hover:text-white transition">EN</button>
                     </div>
                 </div>
-
-                <a href="#accueil" class="block text-orange-500 font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-400 transition">
-                    <span class="lang-fr">Accueil</span><span class="lang-en hidden">Home</span>
-                </a>
-                <a href="#apropos" class="block text-white font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-500 transition">
-                    <span class="lang-fr">À propos</span><span class="lang-en hidden">About</span>
-                </a>
-                <a href="#secteurs" class="block text-white font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-500 transition">
-                    <span class="lang-fr">Secteurs</span><span class="lang-en hidden">Sectors</span>
-                </a>
-                <a href="#services-anchor" class="block text-white font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-500 transition">
-                    <span class="lang-fr">Services</span><span class="lang-en hidden">Services</span>
-                </a>
-                <a href="#contact" class="block text-center bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold uppercase px-6 py-2 rounded transition shadow-lg mt-2">
-                    Contact
-                </a>
+                <a href="#accueil" class="block text-white font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-500 transition"><span class="lang-fr">Accueil</span><span class="lang-en hidden">Home</span></a>
+                <a href="#apropos" class="block text-white font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-500 transition"><span class="lang-fr">À propos</span><span class="lang-en hidden">About</span></a>
+                <a href="#secteurs" class="block text-white font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-500 transition"><span class="lang-fr">Secteurs</span><span class="lang-en hidden">Sectors</span></a>
+                <a href="#services-anchor" class="block text-white font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-500 transition"><span class="lang-fr">Services</span><span class="lang-en hidden">Services</span></a>
+                <a href="#contact" class="block text-white font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-500 transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header id="accueil" class="hero-bg min-h=[90vh] flex items-center text-white pt-36 md:pt-32">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="max-w-4xl">
-                <span class="text-orange-500 font-bold tracking-widest uppercase mb-4 inline-block text-sm md:text-base">
+    <header id="accueil" class="hero-bg relative min-h-[90vh] flex items-center text-white pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2068&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay pointer-events-none"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="max-w-6xl animate-fade-up">
+                <span class="text-orange-500 font-bold tracking-widest uppercase mb-4 inline-block text-sm md:text-base bg-orange-500/10 px-3 py-1 rounded">
                     <span class="lang-fr">Conseil Stratégique & Développement</span><span class="lang-en hidden">Strategic Consulting & Development</span>
                 </span>
-                <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
                     MINING & ENERGY <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">PARTNERS</span>
                 </h1>
-                <p class="text-lg md:text-2xl mb-10 text-slate-300 font-light border-l-4 border-orange-500 pl-6 italic">
+                <p class="text-lg md:text-3xl mb-10 text-slate-300 font-light border-l-4 border-orange-500 pl-6 italic">
                     <span class="lang-fr">"Nous irons chaque jour, encore plus loin."</span>
                     <span class="lang-en hidden">"We will go further every day."</span>
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#apropos" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-md shadow-lg transition-all hover:-translate-y-1 text-sm md:text-base">
-                        <span class="lang-fr">Découvrir MEP</span><span class="lang-en hidden">Discover MEP</span>
-                    </a>
-                </div>
+                <a href="#services-anchor" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition-all hover:scale-105 shadow-lg shadow-orange-500/20">
+                    <span class="lang-fr">Découvrir nos services</span><span class="lang-en hidden">Discover our services</span>
+                    <i class="fas fa-arrow-down ml-2"></i>
+                </a>
             </div>
         </div>
     </header>
@@ -139,7 +120,6 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
                 <div>
-                    <span class="section-subtitle">MEP</span>
                     <h2 class="section-title mb-6"><span class="lang-fr">Qui sommes-nous ?</span><span class="lang-en hidden">Who are we?</span></h2>
                     
                     <div class="space-y-4 text-slate-400 text-lg leading-relaxed">
@@ -148,25 +128,21 @@
                             <span class="lang-fr">MEP est spécialisée dans la prospection minière, les études de faisabilité, l’ingénierie et le suivi des projets.</span>
                             <span class="lang-en hidden">MEP specializes in mining prospecting, feasibility studies, engineering and project monitoring.</span>
                         </div>
-
                         <div class="flex items-start">
                             <span class="text-orange-500 mr-3 mt-1 text-sm"><i class="fas fa-chevron-right"></i></span>
                             <span class="lang-fr">Apporte son assistance pour la levée des fonds, et le financement des projets.</span>
                             <span class="lang-en hidden">Provides assistance for fundraising and project financing.</span>
                         </div>
-
                         <div class="flex items-start">
                             <span class="text-orange-500 mr-3 mt-1 text-sm"><i class="fas fa-chevron-right"></i></span>
                             <span class="lang-fr">Conseille grâce à son expertise, les entreprises en matière de stratégie de développement et de Changement.</span>
                             <span class="lang-en hidden">Advises companies on development and change strategies thanks to its expertise.</span>
                         </div>
-
                         <div class="flex items-start">
                             <span class="text-orange-500 mr-3 mt-1 text-sm"><i class="fas fa-chevron-right"></i></span>
                             <span class="lang-fr">Assiste et conseille l’Administration publique en gouvernance, stratégie, et pilotage, notamment dans les domaines des mines, O&G, transition énergétique et renforcement des capacités.</span>
                             <span class="lang-en hidden">Assists and advises Public Administration on governance, strategy, and steering, particularly in mining, O&G, energy transition, and capacity building.</span>
                         </div>
-
                         <div class="flex items-start">
                             <span class="text-orange-500 mr-3 mt-1 text-sm"><i class="fas fa-chevron-right"></i></span>
                             <span class="lang-fr">Accompagne les investisseurs dans le pays et en Afrique y compris les services support et les travaux de sous-traitance.</span>
@@ -175,7 +151,7 @@
                     </div>
                 </div>
                 <div class="hidden md:flex justify-center items-center h-full">
-                     <i class="fas fa-globe-africa text-[10rem] text-slate-800"></i>
+                     <i class="fas fa-globe-africa text-[10rem] text-slate-800 drop-shadow-2xl"></i>
                 </div>
             </div>
 
@@ -192,7 +168,7 @@
                             </div>
                             <h3 class="font-bold text-white text-lg"><span class="lang-fr">Performance</span><span class="lang-en hidden">Performance</span></h3>
                         </div>
-                        <p class="text-slate-400 text-sm"><span class="lang-fr">Excellence et rapidité.</span><span class="lang-en hidden">Excellence and speed.</span></p>
+                        <p class="text-slate-400 text-sm text-center"><span class="lang-fr">Excellence et rapidité</span><span class="lang-en hidden">Excellence and speed</span></p>
                     </div>
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-orange-500 transition group hover:-translate-y-1 duration-300">
                         <div class="flex items-center mb-4">
@@ -201,7 +177,7 @@
                             </div>
                             <h3 class="font-bold text-white text-lg"><span class="lang-fr">Rentabilité</span><span class="lang-en hidden">Profitability</span></h3>
                         </div>
-                        <p class="text-slate-400 text-sm"><span class="lang-fr">Retour sur investissement.</span><span class="lang-en hidden">Return on investment.</span></p>
+                        <p class="text-slate-400 text-sm text-center"><span class="lang-fr">Retour sur investissement</span><span class="lang-en hidden">Return on investment</span></p>
                     </div>
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-orange-500 transition group hover:-translate-y-1 duration-300">
                         <div class="flex items-center mb-4">
@@ -210,7 +186,7 @@
                             </div>
                             <h3 class="font-bold text-white text-lg"><span class="lang-fr">Intégrité</span><span class="lang-en hidden">Integrity</span></h3>
                         </div>
-                        <p class="text-slate-400 text-sm"><span class="lang-fr">Honnêteté et respect.</span><span class="lang-en hidden">Honesty and respect.</span></p>
+                        <p class="text-slate-400 text-sm text-center"><span class="lang-fr">Honnêteté et respect</span><span class="lang-en hidden">Honesty and respect</span></p>
                     </div>
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-orange-500 transition group hover:-translate-y-1 duration-300">
                         <div class="flex items-center mb-4">
@@ -219,7 +195,7 @@
                             </div>
                             <h3 class="font-bold text-white text-lg"><span class="lang-fr">Responsabilité</span><span class="lang-en hidden">Responsibility</span></h3>
                         </div>
-                        <p class="text-slate-400 text-sm"><span class="lang-fr">Engagements tenus.</span><span class="lang-en hidden">Commitments kept.</span></p>
+                        <p class="text-slate-400 text-sm text-center"><span class="lang-fr">Engagements tenus</span><span class="lang-en hidden">Commitments kept</span></p>
                     </div>
                 </div>
             </div>
@@ -228,7 +204,7 @@
 
     <section id="secteurs" class="py-24 bg-slate-800 border-y border-slate-700">
         <div class="container mx-auto px-6">
-            <h2 class="section-title text-center mb-16"><span class="lang-fr">Nos Secteurs Clés</span><span class="lang-en hidden">Key Sectors</span></h2>
+            <h2 class="section-title text-center mb-16 !text-orange-500"><span class="lang-fr">Nos Secteurs Clés</span><span class="lang-en hidden">Key Sectors</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
                 <div class="sector-card bg-mining">
                     <div class="sector-content">
@@ -272,15 +248,15 @@
     <section id="services-anchor" class="py-24 bg-slate-900">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="section-subtitle"><span class="lang-fr">Nos Services</span><span class="lang-en hidden">Our Services</span></span>
-                <h2 class="section-title"><span class="lang-fr">Domaines d'Intervention</span><span class="lang-en hidden">Areas of Intervention</span></h2>
+                <span class="section-subtitle !text-orange-500"><span class="lang-fr">Nos Services Et</span><span class="lang-en hidden">Our Services And</span></span>
+                <h2 class="section-title !text-orange-500"><span class="lang-fr">Domaines d'Intervention</span><span class="lang-en hidden">Areas of Intervention</span></h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div id="axe-projets" class="dark-card group hover:bg-slate-700 transition">
                     <div class="flex justify-between items-start mb-4">
                         <h3 class="text-xl font-bold text-white border-b-2 border-orange-500 pb-2"><span class="lang-fr">Projets</span><span class="lang-en hidden">Projects</span></h3>
-                        <span class="text-5xl font-black text-slate-700 group-hover:text-slate-600">01</span>
+                        <span class="text-5xl font-black text-slate-700 group-hover:text-orange-500 transition-colors">01</span>
                     </div>
                     <ul class="text-slate-400 space-y-3">
                         <li class="flex items-center"><i class="fas fa-check text-orange-500 mr-2"></i><span class="lang-fr">Prospection & Faisabilité</span><span class="lang-en hidden">Feasibility Studies</span></li>
@@ -292,7 +268,7 @@
                 <div id="axe-entreprises" class="dark-card group hover:bg-slate-700 transition">
                     <div class="flex justify-between items-start mb-4">
                         <h3 class="text-xl font-bold text-white border-b-2 border-orange-500 pb-2"><span class="lang-fr">Entreprises</span><span class="lang-en hidden">Corporate</span></h3>
-                        <span class="text-5xl font-black text-slate-700 group-hover:text-slate-600">02</span>
+                        <span class="text-5xl font-black text-slate-700 group-hover:text-orange-500 transition-colors">02</span>
                     </div>
                     <ul class="text-slate-400 space-y-3">
                         <li class="flex items-center"><i class="fas fa-check text-orange-500 mr-2"></i><span class="lang-fr">Stratégie d'Entreprise</span><span class="lang-en hidden">Business Strategy</span></li>
@@ -304,7 +280,7 @@
                 <div id="axe-gouvernance" class="dark-card group hover:bg-slate-700 transition">
                     <div class="flex justify-between items-start mb-4">
                         <h3 class="text-xl font-bold text-white border-b-2 border-orange-500 pb-2"><span class="lang-fr">Gouvernance</span><span class="lang-en hidden">Governance</span></h3>
-                        <span class="text-5xl font-black text-slate-700 group-hover:text-slate-600">03</span>
+                        <span class="text-5xl font-black text-slate-700 group-hover:text-orange-500 transition-colors">03</span>
                     </div>
                     <ul class="text-slate-400 space-y-3">
                         <li class="flex items-center"><i class="fas fa-check text-orange-500 mr-2"></i><span class="lang-fr">Conseil Administration</span><span class="lang-en hidden">Public Administration</span></li>
@@ -313,23 +289,21 @@
                     </ul>
                 </div>
                 
-                <div id="axe-investisseurs" class="dark-card group hover:bg-slate-700 transition md:col-span-3 lg:col-span-3">
+                <div id="axe-investisseurs" class="dark-card group hover:bg-slate-700 transition md:col-span-3 lg:col-span-3 border-l-4 border-l-orange-500/0 hover:border-l-orange-500">
                     <div class="flex justify-between items-start mb-6">
                         <h3 class="text-xl font-bold text-white border-b-2 border-orange-500 pb-2"><span class="lang-fr">Investisseurs</span><span class="lang-en hidden">Investors</span></h3>
-                        <span class="text-5xl font-black text-slate-700 group-hover:text-slate-600">04</span>
+                        <span class="text-5xl font-black text-slate-700 group-hover:text-orange-500 transition-colors">04</span>
                     </div>
-                    <div class="mb-4 text-orange-500 font-semibold uppercase tracking-wider text-sm"><span class="lang-fr">Nous accompagnons les investisseurs</span><span class="lang-en hidden">We accompany investors</span></div>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
                         <ul class="text-slate-400 space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Nous accompagnons les investisseurs</span><span class="lang-en hidden">We accompany investors</span></li>
                             <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Assistance et conseil des investisseurs étrangers</span><span class="lang-en hidden">Assistance and advice to foreign investors</span></li>
                             <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Contribuer à promouvoir l’IDE en Mauritanie</span><span class="lang-en hidden">Contribute to promoting FDI in Mauritania</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Opportunités d’investissement</span><span class="lang-en hidden">Investment opportunities</span></li>
                         </ul>
                         <ul class="text-slate-400 space-y-3">
-                             <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Initiation au cadre légal (minier, pétrolier, électricité, investissement, environnement)</span><span class="lang-en hidden">Intro to legal framework (mining, oil, electricity, investment, environment)</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Prospection Minière</span><span class="lang-en hidden">Mining Prospecting</span></li>
-                            <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Etudes de faisabilité et montage des projets, assistance et conseil en financement</span><span class="lang-en hidden">Feasibility studies, project setup, financing assistance</span></li>
+                             <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Initiation au cadre légal (minier, pétrolier, électricité, investissement)</span><span class="lang-en hidden">Intro to legal framework (mining, oil, electricity, investment)</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Prospection Minière & Opportunités d’investissement</span><span class="lang-en hidden">Mining Prospecting & Opportunities</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-orange-500 mr-3 mt-1"></i><span class="lang-fr">Etudes de faisabilité, montage et financement</span><span class="lang-en hidden">Feasibility studies, project setup, financing</span></li>
                         </ul>
                     </div>
                 </div>
@@ -337,7 +311,7 @@
                 <div id="axe-support" class="dark-card group hover:bg-slate-700 transition md:col-span-3">
                     <div class="flex justify-between items-start mb-4">
                         <h3 class="text-xl font-bold text-white border-b-2 border-orange-500 pb-2"><span class="lang-fr">Support & Services</span><span class="lang-en hidden">Support Services</span></h3>
-                        <span class="text-5xl font-black text-slate-700 group-hover:text-slate-600">05</span>
+                        <span class="text-5xl font-black text-slate-700 group-hover:text-orange-500 transition-colors">05</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <ul class="text-slate-400 space-y-3">
