@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; overflow-x: hidden; }
         
         /* COULEURS */
         :root { --mep-blue: #0f172a; --mep-orange: #f97316; }
@@ -35,10 +35,10 @@
     <nav class="bg-slate-900 fixed w-full z-50 border-b border-slate-800 shadow-lg">
         
         <div class="bg-black/40 text-xs border-b border-slate-800 py-2">
-            <div class="container mx-auto px-6 flex justify-between items-center text-slate-400">
-                <div class="flex space-x-6">
-                    <a href="mailto:contact.mepartners@gmail.com" class="hover:text-orange-500 transition flex items-center">
-                        <i class="fas fa-envelope mr-2"></i> contact.mepartners@gmail.com
+            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-slate-400 gap-2 md:gap-0">
+                <div class="flex flex-wrap justify-center space-x-4 md:space-x-6">
+                    <a href="mailto:contact@minergie.com" class="hover:text-orange-500 transition flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> contact@minergie.com
                     </a>
                     <a href="tel:+22245252326" class="hover:text-orange-500 transition flex items-center">
                         <i class="fas fa-phone mr-2"></i> +222 45 25 23 26
@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
             
             <div class="text-2xl font-extrabold text-white tracking-tight flex items-center mb-4 md:mb-0">
                 <i class="fas fa-layer-group text-orange-500 mr-3"></i> MEP
@@ -68,15 +68,15 @@
                     <span class="lang-fr">À propos</span><span class="lang-en hidden">About</span>
                 </a>
 
-                <a href="#services-anchor" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
-                    <span class="lang-fr">Services</span><span class="lang-en hidden">Services</span>
-                </a>
-
                 <a href="#secteurs" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
                     <span class="lang-fr">Secteurs</span><span class="lang-en hidden">Sectors</span>
                 </a>
+
+                <a href="#services-anchor" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
+                    <span class="lang-fr">Services</span><span class="lang-en hidden">Services</span>
+                </a>
                 
-                <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold uppercase px-6 py-3 rounded transition shadow-lg ml-2">
+                <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold uppercase px-6 py-2 md:py-3 rounded transition shadow-lg mt-2 md:mt-0">
                     Contact
                 </a>
 
@@ -84,21 +84,21 @@
         </div>
     </nav>
 
-    <header id="accueil" class="hero-bg min-h-[90vh] flex items-center text-white pt-32">
-        <div class="container mx-auto px-6">
+    <header id="accueil" class="hero-bg min-h-[90vh] flex items-center text-white pt-36 md:pt-32">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-4xl">
-                <span class="text-orange-500 font-bold tracking-widest uppercase mb-4 inline-block">
+                <span class="text-orange-500 font-bold tracking-widest uppercase mb-4 inline-block text-sm md:text-base">
                     <span class="lang-fr">Conseil Stratégique & Développement</span><span class="lang-en hidden">Strategic Consulting & Development</span>
                 </span>
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6">
                     MINING & ENERGY <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">PARTNERS</span>
                 </h1>
-                <p class="text-xl md:text-2xl mb-10 text-slate-300 font-light border-l-4 border-orange-500 pl-6 italic">
+                <p class="text-lg md:text-2xl mb-10 text-slate-300 font-light border-l-4 border-orange-500 pl-6 italic">
                     <span class="lang-fr">"Nous irons chaque jour, encore plus loin."</span>
                     <span class="lang-en hidden">"We will go further every day."</span>
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#apropos" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-md shadow-lg transition-all hover:-translate-y-1">
+                    <a href="#apropos" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-md shadow-lg transition-all hover:-translate-y-1 text-sm md:text-base">
                         <span class="lang-fr">Découvrir MEP</span><span class="lang-en hidden">Discover MEP</span>
                     </a>
                 </div>
@@ -268,8 +268,8 @@
                         <span class="text-5xl font-black text-slate-700 group-hover:text-slate-600">02</span>
                     </div>
                     <ul class="text-slate-400 space-y-3">
-                        <li class="flex items-center"><i class="fas fa-check text-orange-500 mr-2"></i><span class="lang-fr">Business Strategy</span><span class="lang-en hidden">Business Strategy</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-orange-500 mr-2"></i><span class="lang-fr">Cost Killers</span><span class="lang-en hidden">Cost Reduction</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-500 mr-2"></i><span class="lang-fr">Stratégie d'Entreprise</span><span class="lang-en hidden">Business Strategy</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-500 mr-2"></i><span class="lang-fr">Optimisation des Coûts</span><span class="lang-en hidden">Cost Reduction</span></li>
                         <li class="flex items-center"><i class="fas fa-check text-orange-500 mr-2"></i><span class="lang-fr">QHSE & Excellence</span><span class="lang-en hidden">QHSE & Excellence</span></li>
                     </ul>
                 </div>
@@ -338,7 +338,7 @@
                     <a href="tel:+22245252326" class="hover:text-orange-500 transition">+222 45 25 23 26</a>
                 </p>
                 <p class="text-sm">
-                    <a href="mailto:contact.mepartners@gmail.com" class="hover:text-orange-500 transition">contact.mepartners@gmail.com</a>
+                    <a href="mailto:contact@minergie.com" class="hover:text-orange-500 transition">contact@minergie.com</a>
                 </p>
             </div>
             <div class="text-right flex flex-col justify-end">
