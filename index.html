@@ -45,7 +45,8 @@
                         <i class="fas fa-phone mr-2"></i> +222 45 25 23 26
                     </a>
                 </div>
-                <div class="flex items-center space-x-3">
+                <!-- Sélecteur langue visible seulement en desktop -->
+                <div class="hidden md:flex items-center space-x-3">
                     <button onclick="switchLanguage('fr')" id="btn-fr" class="font-bold text-orange-500 hover:text-white transition">FR</button>
                     <span class="text-slate-600">|</span>
                     <button onclick="switchLanguage('en')" id="btn-en" class="font-bold text-slate-400 hover:text-white transition">EN</button>
@@ -54,7 +55,7 @@
         </div>
 
         <!-- Barre principale -->
-        <div class="container mx-auto px-4 py-4 flex items-center justify-betweenpx">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
             <div class="text-2xl font-extrabold text-white tracking-tight flex items-center">
                 <i class="fas fa-layer-group text-orange-500 mr-3"></i> MEP
@@ -71,19 +72,15 @@
                 <a href="#accueil" class="text-orange-500 font-bold uppercase tracking-wide text-sm hover:text-orange-400 transition">
                     <span class="lang-fr">Accueil</span><span class="lang-en hidden">Home</span>
                 </a>
-
                 <a href="#apropos" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
                     <span class="lang-fr">À propos</span><span class="lang-en hidden">About</span>
                 </a>
-
                 <a href="#secteurs" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
                     <span class="lang-fr">Secteurs</span><span class="lang-en hidden">Sectors</span>
                 </a>
-
                 <a href="#services-anchor" class="text-white font-bold uppercase tracking-wide text-sm hover:text-orange-500 transition">
                     <span class="lang-fr">Services</span><span class="lang-en hidden">Services</span>
                 </a>
-                
                 <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold uppercase px-6 py-2 md:py-3 rounded transition shadow-lg mt-2 md:mt-0">
                     Contact
                 </a>
@@ -93,6 +90,18 @@
         <!-- Menu mobile déroulant -->
         <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800 bg-slate-900">
             <div class="px-4 pb-4 flex flex-col space-y-2">
+                <!-- Bloc langue en haut du menu mobile -->
+                <div class="flex items-center justify-between py-2 border-b border-slate-800 mb-2">
+                    <span class="text-xs uppercase tracking-wide text-slate-400 flex items-center gap-2">
+                        <i class="fas fa-globe text-slate-500"></i> Langue
+                    </span>
+                    <div class="flex items-center space-x-3">
+                        <button onclick="switchLanguage('fr')" id="btn-fr-mobile" class="text-xs font-bold text-orange-500 hover:text-white transition">FR</button>
+                        <span class="text-slate-600 text-xs">|</span>
+                        <button onclick="switchLanguage('en')" id="btn-en-mobile" class="text-xs font-bold text-slate-400 hover:text-white transition">EN</button>
+                    </div>
+                </div>
+
                 <a href="#accueil" class="block text-orange-500 font-bold uppercase tracking-wide text-sm py-2 hover:text-orange-400 transition">
                     <span class="lang-fr">Accueil</span><span class="lang-en hidden">Home</span>
                 </a>
@@ -113,7 +122,7 @@
     </nav>
 
     <!-- HERO -->
-    <header id="accueil" class="hero-bg min-h-[90vh] flex items-center text-white pt-36 md:pt-32">
+    <header id="accueil" class="hero-bg min-h=[90vh] flex items-center text-white pt-36 md:pt-32">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-4xl">
                 <span class="text-orange-500 font-bold tracking-widest uppercase mb-4 inline-block text-sm md:text-base">
@@ -386,17 +395,31 @@
             const enElements = document.querySelectorAll('.lang-en');
             const btnFr = document.getElementById('btn-fr');
             const btnEn = document.getElementById('btn-en');
+            const btnFrMobile = document.getElementById('btn-fr-mobile');
+            const btnEnMobile = document.getElementById('btn-en-mobile');
 
             if (lang === 'fr') {
                 frElements.forEach(el => el.classList.remove('hidden'));
                 enElements.forEach(el => el.classList.add('hidden'));
-                btnFr.classList.add('text-orange-500'); btnFr.classList.remove('text-slate-400');
-                btnEn.classList.add('text-slate-400'); btnEn.classList.remove('text-orange-500');
+                if (btnFr && btnEn) {
+                    btnFr.classList.add('text-orange-500'); btnFr.classList.remove('text-slate-400');
+                    btnEn.classList.add('text-slate-400'); btnEn.classList.remove('text-orange-500');
+                }
+                if (btnFrMobile && btnEnMobile) {
+                    btnFrMobile.classList.add('text-orange-500'); btnFrMobile.classList.remove('text-slate-400');
+                    btnEnMobile.classList.add('text-slate-400'); btnEnMobile.classList.remove('text-orange-500');
+                }
             } else {
                 frElements.forEach(el => el.classList.add('hidden'));
                 enElements.forEach(el => el.classList.remove('hidden'));
-                btnEn.classList.add('text-orange-500'); btnEn.classList.remove('text-slate-400');
-                btnFr.classList.add('text-slate-400'); btnFr.classList.remove('text-orange-500');
+                if (btnFr && btnEn) {
+                    btnEn.classList.add('text-orange-500'); btnEn.classList.remove('text-slate-400');
+                    btnFr.classList.add('text-slate-400'); btnFr.classList.remove('text-orange-500');
+                }
+                if (btnFrMobile && btnEnMobile) {
+                    btnEnMobile.classList.add('text-orange-500'); btnEnMobile.classList.remove('text-slate-400');
+                    btnFrMobile.classList.add('text-slate-400'); btnFrMobile.classList.remove('text-orange-500');
+                }
             }
         }
 
@@ -407,7 +430,6 @@
 
         navToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            // Change l'icône bars / xmark
             if (mobileMenu.classList.contains('hidden')) {
                 navIcon.classList.remove('fa-xmark');
                 navIcon.classList.add('fa-bars');
