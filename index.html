@@ -67,8 +67,8 @@
         <div class="bg-black/40 text-xs border-b border-slate-800 py-2">
             <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-slate-400 gap-2 md:gap-0">
                 <div class="flex flex-wrap justify-center space-x-4 md:space-x-6">
-                    <a href="/cdn-cgi/l/email-protection#31525e5f45505245715c585f54435658541f525e5c" class="hover:text-orange-500 transition flex items-center">
-                        <i class="fas fa-envelope mr-2"></i> <span class="__cf_email__" data-cfemail="80e3efeef4e1e3f4c0ede9eee5f2e7e9e5aee3efed">contact@minenergie.com</span>
+                    <a href="mailto:contact@minenergie.com" class="hover:text-orange-500 transition flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> contact@minenergie.com
                     </a>
                     <a href="tel:+22245252326" class="hover:text-orange-500 transition flex items-center">
                         <i class="fas fa-phone mr-2"></i> +222 45 25 23 26
@@ -222,7 +222,7 @@
     </section>
 
     <section id="secteurs" class="py-24 bg-slate-800 border-y border-slate-700">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-4 md:px-6">
 
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white"><span class="lang-fr">Nos Secteurs Clés</span><span class="lang-en hidden">Key Sectors</span></h2>
@@ -230,47 +230,47 @@
                 <p class="text-slate-400 text-sm mt-3"><span class="lang-fr"></span><span class="lang-en hidden">Click on a sector to discover our services</span></p>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-4 items-stretch">
+            <div class="flex flex-row gap-2 md:gap-4 items-stretch">
 
-                <div class="flex flex-col gap-3 transition-all duration-500" id="sector-col" style="width:100%">
-                    <button onclick="toggleSector('mines')" id="btn-mines" class="sector-btn bg-mining rounded-xl border border-slate-600 flex items-center gap-3 px-5 py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
-                        <i class="fas fa-mountain text-white text-lg shrink-0"></i>
-                        <span class="text-white font-bold text-sm leading-tight flex-1"><span class="lang-fr">Mines</span><span class="lang-en hidden">Mining</span></span>
+                <div class="flex flex-col gap-2 md:gap-3 transition-all duration-500" id="sector-col" style="width:100%">
+                    <button onclick="toggleSector('mines')" id="btn-mines" class="sector-btn bg-mining rounded-xl border border-slate-600 flex items-center gap-2 md:gap-3 px-3 md:px-5 py-3 md:py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
+                        <i class="fas fa-mountain text-white text-base md:text-lg shrink-0"></i>
+                        <span class="text-white font-bold text-xs md:text-sm leading-tight flex-1"><span class="lang-fr">Mines</span><span class="lang-en hidden">Mining</span></span>
                         <i class="fas fa-chevron-right text-white/40 text-xs arrow-icon" id="arrow-mines"></i>
                     </button>
-                    <button onclick="toggleSector('oil')" id="btn-oil" class="sector-btn bg-oil rounded-xl border border-slate-600 flex items-center gap-3 px-5 py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
-                        <i class="fas fa-fire-flame-curved text-white text-lg shrink-0"></i>
-                        <span class="text-white font-bold text-sm leading-tight flex-1">Pétrole & Gaz</span>
+                    <button onclick="toggleSector('oil')" id="btn-oil" class="sector-btn bg-oil rounded-xl border border-slate-600 flex items-center gap-2 md:gap-3 px-3 md:px-5 py-3 md:py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
+                        <i class="fas fa-fire-flame-curved text-white text-base md:text-lg shrink-0"></i>
+                        <span class="text-white font-bold text-xs md:text-sm leading-tight flex-1">Pétrole & Gaz</span>
                         <i class="fas fa-chevron-right text-white/40 text-xs arrow-icon" id="arrow-oil"></i>
                     </button>
-                    <button onclick="toggleSector('green')" id="btn-green" class="sector-btn bg-green rounded-xl border border-slate-600 flex items-center gap-3 px-5 py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
-                        <i class="fas fa-leaf text-white text-lg shrink-0"></i>
-                        <span class="text-white font-bold text-sm leading-tight flex-1"><span class="lang-fr">Transition Énergétique</span><span class="lang-en hidden">Green Energy</span></span>
+                    <button onclick="toggleSector('green')" id="btn-green" class="sector-btn bg-green rounded-xl border border-slate-600 flex items-center gap-2 md:gap-3 px-3 md:px-5 py-3 md:py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
+                        <i class="fas fa-leaf text-white text-base md:text-lg shrink-0"></i>
+                        <span class="text-white font-bold text-xs md:text-sm leading-tight flex-1"><span class="lang-fr">Transition Énergétique</span><span class="lang-en hidden">Green Energy</span></span>
                         <i class="fas fa-chevron-right text-white/40 text-xs arrow-icon" id="arrow-green"></i>
                     </button>
-                    <button onclick="toggleSector('water')" id="btn-water" class="sector-btn bg-water rounded-xl border border-slate-600 flex items-center gap-3 px-5 py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
-                        <i class="fas fa-water text-white text-lg shrink-0"></i>
-                        <span class="text-white font-bold text-sm leading-tight flex-1"><span class="lang-fr">Hydraulique</span><span class="lang-en hidden">Hydraulics</span></span>
+                    <button onclick="toggleSector('water')" id="btn-water" class="sector-btn bg-water rounded-xl border border-slate-600 flex items-center gap-2 md:gap-3 px-3 md:px-5 py-3 md:py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
+                        <i class="fas fa-water text-white text-base md:text-lg shrink-0"></i>
+                        <span class="text-white font-bold text-xs md:text-sm leading-tight flex-1"><span class="lang-fr">Hydraulique</span><span class="lang-en hidden">Hydraulics</span></span>
                         <i class="fas fa-chevron-right text-white/40 text-xs arrow-icon" id="arrow-water"></i>
                     </button>
-                    <button onclick="toggleSector('infra')" id="btn-infra" class="sector-btn bg-infra rounded-xl border border-slate-600 flex items-center gap-3 px-5 py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
-                        <i class="fas fa-road text-white text-lg shrink-0"></i>
-                        <span class="text-white font-bold text-sm leading-tight flex-1"><span class="lang-fr">Infrastructures</span><span class="lang-en hidden">Infrastructure</span></span>
+                    <button onclick="toggleSector('infra')" id="btn-infra" class="sector-btn bg-infra rounded-xl border border-slate-600 flex items-center gap-2 md:gap-3 px-3 md:px-5 py-3 md:py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
+                        <i class="fas fa-road text-white text-base md:text-lg shrink-0"></i>
+                        <span class="text-white font-bold text-xs md:text-sm leading-tight flex-1"><span class="lang-fr">Infrastructures</span><span class="lang-en hidden">Infrastructure</span></span>
                         <i class="fas fa-chevron-right text-white/40 text-xs arrow-icon" id="arrow-infra"></i>
                     </button>
-                    <button onclick="toggleSector('env')" id="btn-env" class="sector-btn bg-env rounded-xl border border-slate-600 flex items-center gap-3 px-5 py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
-                        <i class="fas fa-seedling text-white text-lg shrink-0"></i>
-                        <span class="text-white font-bold text-sm leading-tight flex-1"><span class="lang-fr">Environnement</span><span class="lang-en hidden">Environment</span></span>
+                    <button onclick="toggleSector('env')" id="btn-env" class="sector-btn bg-env rounded-xl border border-slate-600 flex items-center gap-2 md:gap-3 px-3 md:px-5 py-3 md:py-4 cursor-pointer transition-all duration-300 hover:border-orange-400 text-left w-full">
+                        <i class="fas fa-seedling text-white text-base md:text-lg shrink-0"></i>
+                        <span class="text-white font-bold text-xs md:text-sm leading-tight flex-1"><span class="lang-fr">Environnement</span><span class="lang-en hidden">Environment</span></span>
                         <i class="fas fa-chevron-right text-white/40 text-xs arrow-icon" id="arrow-env"></i>
                     </button>
                 </div>
 
-                <div id="sector-panel" class="hidden flex-1 bg-slate-900 border border-orange-500 rounded-xl p-8 shrink-0" style="min-width:0">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-1 h-7 bg-orange-500 rounded"></div>
-                        <h4 class="text-white font-bold text-xl" id="panel-title"></h4>
+                <div id="sector-panel" class="hidden flex-1 bg-slate-900 border border-orange-500 rounded-xl p-4 md:p-8 shrink-0 overflow-hidden" style="min-width:0">
+                    <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                        <div class="w-1 h-5 md:h-7 bg-orange-500 rounded"></div>
+                        <h4 class="text-white font-bold text-lg md:text-xl" id="panel-title"></h4>
                     </div>
-                    <ul id="panel-list" class="flex flex-col gap-4"></ul>
+                    <ul id="panel-list" class="flex flex-col gap-3 md:gap-4"></ul>
                 </div>
 
             </div>
@@ -377,7 +377,7 @@
                     <a href="tel:+22245252326" class="hover:text-orange-500 transition">+222 45 25 23 26</a>
                 </p>
                 <p class="text-sm">
-                    <a href="/cdn-cgi/l/email-protection#482b27263c292b3c082521262d3a2f212d662b2725" class="hover:text-orange-500 transition"><span class="__cf_email__" data-cfemail="3754585943565443775a5e595245505e521954585a">contact@minenergie.com</span></a>
+                    <a href="mailto:contact@minenergie.com" class="hover:text-orange-500 transition">contact@minenergie.com</a>
                 </p>
             </div>
             <div class="text-right flex flex-col justify-end">
@@ -387,7 +387,6 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // ===== SECTEURS =====
         const sectorData = {
@@ -443,9 +442,11 @@
             // Remplir le panneau
             document.getElementById('panel-title').textContent = data.title;
             const list = document.getElementById('panel-list');
+            
+            // Modification ICI : Texte plus petit sur mobile (text-xs)
             list.innerHTML = data.items.map(item =>
-                `<li class="flex items-center gap-3 text-slate-300 text-sm py-2 border-b border-slate-700/50 last:border-0">
-                    <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>${item}
+                `<li class="flex items-center gap-2 md:gap-3 text-slate-300 text-xs md:text-sm py-2 border-b border-slate-700/50 last:border-0 leading-tight">
+                    <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-orange-500 shrink-0"></span>${item}
                 </li>`
             ).join('');
 
@@ -457,20 +458,16 @@
             document.getElementById('btn-' + id).classList.add('border-orange-500');
             const arrow = document.getElementById('arrow-' + id);
             
-            // MODIFICATION ICI : Gestion de la flèche (haut/bas sur mobile, gauche/droite sur PC)
+            // Modification ICI : Force la flèche à gauche peu importe l'écran
             arrow.classList.remove('fa-chevron-right');
-            if (window.innerWidth >= 768) {
-                arrow.classList.add('fa-chevron-left');
-            } else {
-                arrow.classList.add('fa-chevron-down');
-            }
+            arrow.classList.add('fa-chevron-left');
             arrow.style.color = '#f97316';
 
-            // MODIFICATION ICI : Rétrécir la colonne uniquement sur les grands écrans
-            if (window.innerWidth >= 768) {
-                col.style.width = '35%';
+            // Modification ICI : On donne un peu plus d'espace aux boutons sur mobile (40%) par rapport au PC (35%) pour éviter que le texte soit écrasé
+            if (window.innerWidth < 768) {
+                col.style.width = '42%'; 
             } else {
-                col.style.width = '100%';
+                col.style.width = '35%';
             }
             
             // Afficher le panneau
